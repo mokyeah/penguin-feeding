@@ -57,7 +57,7 @@ const handle = () => {
 </button>
       </div>
       </div>
-      <div className='text-3xl font-mono font-semibold absolute p-32'>fish collected: {data}</div>
+      <div className='text-3xl font-mono font-semibold justify-center flex p-32'>fish collected: {data}</div>
       
     </div>
   )
