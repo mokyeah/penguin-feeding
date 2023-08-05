@@ -10,9 +10,10 @@ import {
 import Penguin from "./penguin";
 import Fish from "./fish";
 
+
 function App() {
   const [data, setData] = useState(0);
-  const [clickFish, onClickFish] = useState("./public/fish02.png");
+  const [clickFish, onClickFish] = useState("../src/assets/fish02.png");
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
   const alert = () => {
@@ -20,15 +21,15 @@ function App() {
   };
 
   const handle = () => {
-    if (clickFish === "./public/fish02.png") {
-      onClickFish("./public/fish03.png");
-    } else onClickFish("./public/fish02.png");
+    if (clickFish === "../src/assets/fish02.png") {
+      onClickFish("../src/assets/fish03.png");
+    } else onClickFish("../src/assets/fish02.png");
   };
 
   useEffect(() => {
-    if (clickFish === "./public/fish03.png") {
+    if (clickFish === "../src/assets/fish03.png") {
       const timer = setTimeout(() => {
-        onClickFish("./public/fish02.png");
+        onClickFish("../src/assets/fish02.png");
       }, 500);
 
       return () => clearTimeout(timer);
@@ -46,8 +47,9 @@ function App() {
   };
 
   return (
-    <div className="bg-blue-200 w-full h-screen flex flex-col ">
+    <div className="bg-blue-200 w-full h-screen flex flex-row ">
       <Router>
+        <nav>
         <div className="p-3 ">
           <div className="border-2 rounded-md border-black w-32 h-min justify-center flex">
             <button className="text-2xl ">
@@ -60,14 +62,18 @@ function App() {
             <button className="text-2xl">
               <Link to="/fish">
                 grab the <div className="font-bold ">FISH</div>
+                
               </Link>
             </button>
           </div>
         </div>
+        </nav>
+        <main className="w-full h-screen">
         <Routes>
           <Route path="/penguin" element={<Penguin />}></Route>
           <Route path="/fish" element={<Fish />}></Route>
         </Routes>
+        </main>
       </Router>
     </div>
   );

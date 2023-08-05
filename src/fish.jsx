@@ -5,7 +5,7 @@ import { Route, Routes, Link, BrowserRouter as Router, useActionData } from "rea
 function fish() {
 
 const [data, setData] = useState(0)
-const [clickFish, onClickFish] = useState("./public/fish02.png")
+const [clickFish, onClickFish] = useState("../src/assets/fish02.png")
 const [isButtonDisabled, setIsButtonDisabled] = useState(false)
 const [clickBase, onClickBase] = useState("")
 const alert = () => {
@@ -13,16 +13,16 @@ const alert = () => {
 }
 
 const handle = () => {
-  if (clickFish === './public/fish02.png') {
-    onClickFish('./public/fish03.png')  
+  if (clickFish === '../src/assets/fish02.png') {
+    onClickFish('../src/assets/fish03.png')  
   }
-  else onClickFish('./public/fish02.png')
+  else onClickFish('../src/assets/fish02.png')
 }
 
   useEffect(() => {
-    if (clickFish === './public/fish03.png') {
+    if (clickFish === '../src/assets/fish03.png') {
       const timer = setTimeout(() => {
-        onClickFish('./public/fish02.png');
+        onClickFish('../src/assets/fish02.png');
       }, 500);
 
       return () => clearTimeout(timer);
@@ -43,7 +43,7 @@ const handle = () => {
 
   
   return (
-    <div className='bg-blue-200 w-full h-screen flex flex-col'>
+    <div className='bg-blue-200 w-full h-screen flex flex-col '>
       <div className='justify-center flex'>
         <div className='flex-row p-3'>
         <div className='text-2xl font-bold '>PENGUIN FEEDING SIMULATOR</div>
@@ -57,8 +57,8 @@ const handle = () => {
 </button>
       </div>
       </div>
-      <div className='text-3xl font-mono font-semibold justify-center flex p-32'>fish collected: {data}</div>
-      
+      <div className='text-3xl font-mono font-semibold justify-center flex '>fish collected: {data}</div>      
+
     </div>
   )
 }
