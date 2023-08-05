@@ -51,9 +51,13 @@ function penguin() {
         </div>
         <div className='justify-center items-center flex flex-col  '>
           <div className='border-2 items-center rounded-md w-32 h-12 justify-center font-bold text-xl  flex '>
-            <div disabled={isButtonDisabled} onClick={handleClick}>
-              <button onClick={handle}>FEED HIM</button>
-            </div>
+          {datas?.clicks <= 10 ? (
+        <button>FEED HIM</button>)
+        : (<div disabled={isButtonDisabled} onClick={handleClick}>
+          <button onClick={handle}>FEED HIM</button>
+        
+        </div>)}
+            
 
           </div>
 

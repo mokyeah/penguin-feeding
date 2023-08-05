@@ -46,22 +46,32 @@ function App() {
     <div className="bg-blue-200 w-full h-screen flex flex-row ">
       <Router>
         <nav>
-          <div className="p-3 ">
-            <div className="border-2 rounded-md border-black w-32 h-min justify-center flex">
-              <button className="text-2xl ">
+          <div className=" w-32 h-screen">
+            <div className="justify-center flex ">
+            <div className="bg-black absolute w-1 h-screen"></div>
+            </div>
+            <div className="p-2 justify-between space-y-5">
+            <div className="">
+              <button className="text-5xl justify-center ">
                 <Link to="/penguin">
-                  feed the <div className="font-bold ">PENGUIN</div>
+                <Icon icon="mdi:penguin" />
                 </Link>
               </button>
             </div>
-            <div className="border-2 rounded-md  border-black w-32 h-min justify-center flex">
-              <button className="text-2xl">
+            <div className="">
+              <button className="text-5xl justify-center flex">
                 <Link to="/fish">
-                  grab the <div className="font-bold ">FISH</div>
+                <Icon icon="mdi:fish" />
 
                 </Link>
               </button>
             </div>
+            </div>
+            <button className="text-4xl p-3 inset-x-0 bottom-0 flex absolute">
+              <Link to="/info">
+            <Icon icon="material-symbols:info" />
+            </Link>
+            </button>
           </div>
         </nav>
         <main className="w-full h-screen">
