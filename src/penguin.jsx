@@ -6,16 +6,16 @@ import { useDocumentData } from "react-firebase-hooks/firestore";
 import { firestore } from "./firebase"
 
 function penguin() {
-  const [clickPenguin, onClickPenguin] = useState("../src/assets/penguin-cry.gif")
+  const [clickPenguin, onClickPenguin] = useState("../pictures/penguin-cry.gif")
   const [isButtonDisabled, setIsButtonDisabled] = useState(false)
 
   const [datas] = useDocumentData(doc(firestore, "click", "click-counter"))
 
   const handle = () => {
-    if (clickPenguin === '../src/assets/penguin-cry.gif') {
-      onClickPenguin('../src/assets/penguin-eat.gif')
+    if (clickPenguin === '../pictures/penguin-cry.gif') {
+      onClickPenguin('../pictures/penguin-eat.gif')
     }
-    else onClickPenguin('../src/assets/penguin-eat.gif')
+    else onClickPenguin('../pictures/penguin-eat.gif')
   }
 
   const handleClick = () => {
@@ -29,9 +29,9 @@ function penguin() {
   };
 
   useEffect(() => {
-    if (clickPenguin === '../src/assets/penguin-eat.gif') {
+    if (clickPenguin === '../pictures/penguin-eat.gif') {
       const timer = setTimeout(() => {
-        onClickPenguin('../src/assets/penguin-cry.gif');
+        onClickPenguin('../pictures/penguin-cry.gif');
       }, 500);
 
       return () => clearTimeout(timer);
