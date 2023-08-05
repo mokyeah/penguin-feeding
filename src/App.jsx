@@ -9,6 +9,8 @@ import {
 } from "react-router-dom";
 import Penguin from "./penguin";
 import Fish from "./fish";
+import { doc, getDoc } from 'firebase/firestore';
+
 
 
 function App() {
@@ -16,15 +18,9 @@ function App() {
   const [clickFish, onClickFish] = useState("../src/assets/fish02.png");
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
-  const alert = () => {
-    alert("caonima");
-  };
 
-  const handle = () => {
-    if (clickFish === "../src/assets/fish02.png") {
-      onClickFish("../src/assets/fish03.png");
-    } else onClickFish("../src/assets/fish02.png");
-  };
+
+
 
   useEffect(() => {
     if (clickFish === "../src/assets/fish03.png") {
@@ -50,29 +46,29 @@ function App() {
     <div className="bg-blue-200 w-full h-screen flex flex-row ">
       <Router>
         <nav>
-        <div className="p-3 ">
-          <div className="border-2 rounded-md border-black w-32 h-min justify-center flex">
-            <button className="text-2xl ">
-              <Link to="/penguin">
-                feed the <div className="font-bold ">PENGUIN</div>
-              </Link>
-            </button>
+          <div className="p-3 ">
+            <div className="border-2 rounded-md border-black w-32 h-min justify-center flex">
+              <button className="text-2xl ">
+                <Link to="/penguin">
+                  feed the <div className="font-bold ">PENGUIN</div>
+                </Link>
+              </button>
+            </div>
+            <div className="border-2 rounded-md  border-black w-32 h-min justify-center flex">
+              <button className="text-2xl">
+                <Link to="/fish">
+                  grab the <div className="font-bold ">FISH</div>
+
+                </Link>
+              </button>
+            </div>
           </div>
-          <div className="border-2 rounded-md  border-black w-32 h-min justify-center flex">
-            <button className="text-2xl">
-              <Link to="/fish">
-                grab the <div className="font-bold ">FISH</div>
-                
-              </Link>
-            </button>
-          </div>
-        </div>
         </nav>
         <main className="w-full h-screen">
-        <Routes>
-          <Route path="/penguin" element={<Penguin />}></Route>
-          <Route path="/fish" element={<Fish />}></Route>
-        </Routes>
+          <Routes>
+            <Route path="/penguin" element={<Penguin />}></Route>
+            <Route path="/fish" element={<Fish />}></Route>
+          </Routes>
         </main>
       </Router>
     </div>
