@@ -47,7 +47,6 @@ function fish() {
 
 
 
-
   return (
     <div className='bg-blue-200 w-full h-screen flex flex-col '>
       <div className='justify-center flex'>

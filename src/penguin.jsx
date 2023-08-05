@@ -28,9 +28,6 @@ function penguin() {
     }
   };
 
-
-
-
   useEffect(() => {
     if (clickPenguin === '../src/assets/penguin-eat.gif') {
       const timer = setTimeout(() => {
