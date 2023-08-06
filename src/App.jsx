@@ -8,6 +8,7 @@ import {
   useActionData,
 } from "react-router-dom";
 import Penguin from "./penguin";
+import Info from "./info";
 import Fish from "./fish";
 import { doc, getDoc } from 'firebase/firestore';
 
@@ -46,7 +47,7 @@ function App() {
     <div className="bg-blue-200 w-full h-screen flex flex-row ">
       <Router>
         <nav>
-          <div className=" w-32 h-screen">
+          <div className=" w-32 h-screen ">
             <div className="justify-center flex ">
             <div className="bg-black absolute w-1 h-screen"></div>
             </div>
@@ -78,6 +79,7 @@ function App() {
           <Routes>
             <Route path="/penguin" element={<Penguin />}></Route>
             <Route path="/fish" element={<Fish />}></Route>
+            <Route path="/info" element={<Info />}></Route>
           </Routes>
         </main>
       </Router>
