@@ -72,8 +72,7 @@ function info() {
       </div>
       <div className="text-xl p-5">
         Their existence is becoming increasingly challenging with each passing
-        day, perhaps reaching a point where even your own child may encounter
-        them solely through literature.{" "}
+        day, possibly leading to an eventual extinction.{" "}
       </div>
 
       <div className="text-3xl text-bold font-mono">What actions can we take? What actions must we take?</div>

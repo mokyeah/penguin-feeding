@@ -66,6 +66,7 @@ function penguin() {
           </div>
 
           <div className='text-xl font-mono font-semibold justify-center flex '> Fish: {datas?.clicks}</div>
+          <div>penguin eat 10 fish once </div>
           <div className='text-xl p-3 font-mono '>The world has fed the fish: {data?.fish} times.</div>
       
         </div>
