@@ -8,7 +8,7 @@ import { firestore } from "./firebase"
 function fish() {
 
   const [datas] = useDocumentData(doc(firestore, "click", "click-counter"))
-  const [clickFish, onClickFish] = useState("../pictures/fish02.png")
+  const [clickFish, onClickFish] = useState("../fish02.png")
   const [isButtonDisabled, setIsButtonDisabled] = useState(false)
   const [clickBase, onClickBase] = useState("")
   const [increase, setIncrease] = useState(0)
@@ -18,17 +18,17 @@ function fish() {
 
 
   const handle = () => {
-    if (clickFish === '../pictures/fish02.png') {
-      onClickFish('../pictures/fish03.png')
+    if (clickFish === '../fish02.png') {
+      onClickFish('../fish03.png')
     }
-    else onClickFish('../pictures/fish02.png')
+    else onClickFish('../fish02.png')
   }
 
 
   useEffect(() => {
-    if (clickFish === '../pictures/fish03.png') {
+    if (clickFish === '../fish03.png') {
       const timer = setTimeout(() => {
-        onClickFish('../pictures/fish02.png');
+        onClickFish('../fish02.png');
       }, 500);
 
       return () => clearTimeout(timer);
