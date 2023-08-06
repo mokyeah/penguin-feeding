@@ -6,6 +6,7 @@ import { useDocumentData } from "react-firebase-hooks/firestore";
 import { firestore } from "./firebase"
 
 function penguin() {
+  const [data] = useDocumentData(doc(firestore, "eat", "fish-eated"))
   const [clickPenguin, onClickPenguin] = useState("../penguin-cry.gif")
   const [isButtonDisabled, setIsButtonDisabled] = useState(false)
 
@@ -21,6 +22,7 @@ function penguin() {
   const handleClick = () => {
     if (!isButtonDisabled) {
       updateDoc(doc(firestore, "click", "click-counter"), { clicks: increment(-10) })
+      updateDoc(doc(firestore, "eat", "fish-eated"), { fish: increment(1) })
       setIsButtonDisabled(true);
       setTimeout(() => {
         setIsButtonDisabled(false);
@@ -28,6 +30,8 @@ function penguin() {
     }
   };
 
+
+  
   useEffect(() => {
     if (clickPenguin === '../penguin-eat.gif') {
       const timer = setTimeout(() => {
@@ -51,7 +55,7 @@ function penguin() {
         </div>
         <div className='justify-center items-center flex flex-col  '>
           <div className='border-2 items-center rounded-md w-32 h-12 justify-center font-bold text-xl  flex '>
-          {datas?.clicks <= 10 ? (
+          {datas?.clicks < 10 ? (
         <button>FEED HIM</button>)
         : (<div disabled={isButtonDisabled} onClick={handleClick}>
           <button onClick={handle}>FEED HIM</button>
@@ -62,7 +66,8 @@ function penguin() {
           </div>
 
           <div className='text-xl font-mono font-semibold justify-center flex '> Fish: {datas?.clicks}</div>
-
+          <div className='text-xl p-3 font-mono '>The world has fed the fish: {data?.fish} times.</div>
+      
         </div>
       </div>
 

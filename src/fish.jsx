@@ -12,9 +12,7 @@ function fish() {
   const [isButtonDisabled, setIsButtonDisabled] = useState(false)
   const [clickBase, onClickBase] = useState("")
   const [increase, setIncrease] = useState(0)
-  const alert = () => {
-    alert("caonima")
-  }
+  
 
 
   const handle = () => {
