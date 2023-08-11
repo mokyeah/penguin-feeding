@@ -33,13 +33,13 @@ function find() {
   
   return (
     <div className="container mx-auto p-8 text-center">
-      <h1 className="text-4xl font-semibold mb-4">Whack-A-Penguin!</h1>
+      <h1 className="text-4xl font-semibold mb-4">Whack-A-Penguin   !</h1>
       <p className="text-lg mb-8">Score: {score}</p>
       <div className="grid grid-cols-3 gap-4">
         {moles.map((mole, index) => (
           <div
             key={index}
-            className={`mole-box ${
+            className={`mole-box rounded-md ${
               mole ? 'bg-blue-600' : 'bg-gray-400'
             }`}
             onClick={() => handleMoleClick(index)}
