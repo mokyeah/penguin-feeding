@@ -1,4 +1,19 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities
+@tailwind utilities;
 
+
+.mole-box {
+    width: 400px; /* Adjust the width as needed */
+    height: 200px; /* Adjust the height as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ccc;
+    cursor: pointer;
+  }
+  
+  .mole-img {
+    width: 150px; /* Adjust the width of the penguin image */
+    height: 150px; /* Adjust the height of the penguin image */
+  }

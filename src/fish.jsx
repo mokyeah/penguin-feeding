@@ -61,7 +61,7 @@ function fish() {
         </div>
       </div>
       <div className='text-3xl font-mono font-semibold justify-center flex '>TOTAL fish collected: {datas?.clicks}</div>
-
+      <div className='text-3xl font-mono font-semibold justify-center flex '>Upgrades:</div>
     </div>
   )
 }

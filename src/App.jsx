@@ -11,7 +11,7 @@ import Penguin from "./penguin";
 import Info from "./info";
 import Fish from "./fish";
 import { doc, getDoc } from 'firebase/firestore';
-
+import Find from "./find";
 
 
 function App() {
@@ -67,6 +67,14 @@ function App() {
                 </Link>
               </button>
             </div>
+            <div className="">
+              <button className="text-5xl justify-center flex">
+                <Link to="/find">
+                <Icon icon="icon-park-outline:game-handle" />
+
+                </Link>
+              </button>
+            </div>
             </div>
             <button className="text-4xl p-3 inset-x-0 bottom-0 flex absolute">
               <Link to="/info">
@@ -80,6 +88,7 @@ function App() {
             <Route path="/penguin" element={<Penguin />}></Route>
             <Route path="/fish" element={<Fish />}></Route>
             <Route path="/info" element={<Info />}></Route>
+            <Route path="/find" element={<Find />}></Route>
           </Routes>
         </main>
       </Router>
